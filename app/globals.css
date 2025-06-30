@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --neon-blue: #00D4FF;
+  --neon-purple: #8B5CF6;
+  --neon-pink: #FF006E;
+  --dark-bg: #0A0A0A;
+  --dark-surface: #1A1A1A;
+  --dark-border: #2A2A2A;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--dark-bg);
+  overflow-x: hidden;
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--neon-blue), var(--neon-purple));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--neon-purple), var(--neon-pink));
+}
+
+/* Effets de particules */
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Animation de texte qui s'écrit */
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid var(--neon-blue);
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--neon-blue) }
+}
+
+/* Effets holographiques */
+.holographic {
+  background: linear-gradient(45deg, 
+    rgba(0, 212, 255, 0.1) 0%, 
+    rgba(139, 92, 246, 0.1) 25%, 
+    rgba(255, 0, 110, 0.1) 50%, 
+    rgba(139, 92, 246, 0.1) 75%, 
+    rgba(0, 212, 255, 0.1) 100%);
+  background-size: 400% 400%;
+  animation: holographic-shift 3s ease infinite;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+@keyframes holographic-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Effet de grille cyber */
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+
+/* Boutons néon */
+.btn-neon {
+  position: relative;
+  padding: 12px 32px;
+  background: transparent;
+  border: 2px solid var(--neon-blue);
+  color: var(--neon-blue);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.btn-neon:hover {
+  color: var(--dark-bg);
+  box-shadow: 
+    0 0 20px var(--neon-blue),
+    inset 0 0 20px var(--neon-blue);
+}
+
+.btn-neon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+  transition: left 0.5s;
+}
+
+.btn-neon:hover::before {
+  left: 100%;
+}
+
+/* Cartes flottantes */
+.floating-card {
+  backdrop-filter: blur(10px);
+  background: rgba(26, 26, 26, 0.7);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.floating-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(0, 212, 255, 0.2);
+  border-color: var(--neon-blue);
+}
+
+/* Effets de survol sur les liens */
+.glow-link {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.glow-link:hover {
+  color: var(--neon-blue);
+  text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.glow-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+  transition: width 0.3s ease;
+}
+
+.glow-link:hover::after {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .typewriter {
+    font-size: 1.5rem;
+  }
+  
+  .cyber-grid {
+    background-size: 25px 25px;
+  }
+} 
