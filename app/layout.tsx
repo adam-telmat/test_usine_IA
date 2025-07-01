@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   description: 'Rejoignez la communauté Usine A, le club des builders IA visionnaires qui créent des projets concrets pour changer le monde. SophIA, SaaS RH, et plus encore.',
   keywords: 'IA, Intelligence Artificielle, SaaS, Innovation, Together.AI, Builders, Communauté Tech',
   authors: [{ name: 'Usine A Team' }],
-  viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
   openGraph: {
     title: 'Usine A - IA & SaaS Factory',
@@ -22,6 +21,11 @@ export const metadata: Metadata = {
     title: 'Usine A - IA & SaaS Factory',
     description: 'Construisons l\'IA qui change le monde',
   }
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
